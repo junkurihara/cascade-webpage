@@ -109,19 +109,19 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber85",
+    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber100",
     " jscu: EC/RSA encryption and signing hybrid-step procedure test via public key encrypt",
     "test"
   ],
   [
     "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber92",
+    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber107",
     " jscu: EC/RSA encryption and signing hybrid-step procedure test via public key encrypt with ephemeralKeys",
     "test"
   ],
   [
     "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber50",
+    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber65",
     " jscu: EC/RSA encryption and signing hybrid-step procedure test via session key encrypt",
     "test"
   ],
@@ -133,7 +133,19 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber45",
+    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber46",
+    " jscu: EC/RSA encryption and signing hybrid-step procedure test without externalKey entry in the final step",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber53",
+    " jscu: EC/RSA encryption and signing hybrid-step procedure test without externalKey entry in the first step",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber60",
     " jscu: EC/RSA encryption and signing mono-step procedure test",
     "test"
   ],
@@ -163,7 +175,7 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber57",
+    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber72",
     " jscu: EC/RSA encryption and signing tribrid-step procedure test via session key encrypt",
     "test"
   ],
@@ -247,25 +259,25 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber99",
+    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber114",
     " openpgp: EC/RSA encryption and signing hybrid-step procedure test via public key encrypt",
     "test"
   ],
   [
     "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber70",
+    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber85",
     " openpgp: EC/RSA encryption and signing hybrid-step procedure test via session key encrypt",
     "test"
   ],
   [
     "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber65",
+    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber80",
     " openpgp: EC/RSA encryption and signing mono-step procedure test",
     "test"
   ],
   [
     "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber77",
+    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber92",
     " openpgp: EC/RSA encryption and signing tribrid-step procedure test via session key encrypt",
     "test"
   ],

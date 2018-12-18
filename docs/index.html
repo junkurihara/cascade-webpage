@@ -186,10 +186,11 @@ const encryptionKeyImported = await cascade.importKeys(
   {keys: encryptionKeys, suite: {encrypt_decrypt: &apos;jscu&apos;, sign_verify: &apos;jscu&apos;}, mode: [&apos;encrypt&apos;, &apos;sign&apos;]}
 );</code>
 </code></pre>
-<p>The configuration object for encryption is also required like the following form that must be matched with the type of given encryption and signing keys imported. The following is an example for the case where the given public and private keys are PEM-formatted EC keys, i.e., ECDH+HKDF public key encryption and ECDSA signing, via <code>js-crypto-utils</code> (as referred to as <code>jscu</code> in the code block).</p>
+<p>The configuration object for encryption is also required like the following form that must be matched with the type of given encryption and signing keys imported. The following is an example for the case where the given public and private keys are PEM-formatted EC keys, i.e., ECDH+HKDF public key encryption and ECDSA signing, via <code>js-crypto-utils</code> (as referred to as <code>jscu</code> in the code block). In the configuration, the encrypt object must have <code>externalKey</code> entry to explicitly specify the origin of the encryption key in the step.</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">// Encryption and signing configuration
 const encryptionConfig = {
   encrypt: {
+    externalKey: true,
     suite: &apos;jscu&apos;,
     options: {
       // HKDF with SHA-256 is employed on the master secret derived from ECDH.
@@ -252,6 +253,7 @@ const decryptionResult = await cascade.decrypt({
 <pre><code class="lang-javascript"><code class="source-code prettyprint">const encryptionProcedure = [
   { // step 1
     encrypt: {
+      externalKey: false,
       suite: &apos;jscu&apos;,
       onetimeKey: {keyParams: {type: &apos;session&apos;, length: 32}}, options: {name: &apos;AES-GCM&apos;}
     },
@@ -259,13 +261,14 @@ const decryptionResult = await cascade.decrypt({
   },
   { // step 2
     encrypt: {
+      externalKey: true,
       suite: &apos;jscu&apos;, options: { hash: &apos;SHA-256&apos;, info: &apos;&apos;, keyLength: 32, encrypt: &apos;AES-GCM&apos; }
     },
     sign: { suite: &apos;jscu&apos;, required: true, options: { hash: &apos;SHA-256&apos; } }
   }
 ];</code>
 </code></pre>
-<p>The above example describes a procedure of <strong>hybrid encryption</strong> where the given message is first encrypted under a one-time session key generated internally at <code>Cascade</code> (step 1), and the session key is then encrypted under the externally given public key (step 2). We can see that the <code>encrypt.onetimeKey</code> specifies the key parameters generated at the step 1, and that the step 2 does not require the entry since public key(s) are given externally. In terms of signatures, the signing parameters and keys given the final step, i.e., step 2, will be applied all the other steps if <code>sign.required = true</code>.</p>
+<p>The above example describes a procedure of <strong>hybrid encryption</strong> where the given message is first encrypted under a one-time session key generated internally at <code>Cascade</code> (step 1), and the session key is then encrypted under the externally given public key (step 2). We can see that the <code>encrypt.onetimeKey</code> specifies the key parameters generated at the step 1, and that the step 2 does not require the entry since public key(s) are given externally. In order to explain the origin of the encryption key explicitly <code>externalKey</code> must be given in each step. In terms of signatures, the signing parameters and keys given the final step, i.e., step 2, will be applied all the other steps if <code>sign.required = true</code>.</p>
 <p>After setting up an encryption procedure, we then obtain a <code>Keys</code> object by importing key strings in an exactly same manner as the basic encryption given above. This <code>Keys</code> object must be matched the parameters of the final step in the given encryption procedure. We then instantiate a <code>Cascade</code> object with the <code>Keys</code> object and the given encryption procedure.</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">const encryptionKeys = {
   publicKeys: [ keys.publicKey.keyString ], // for encryption
