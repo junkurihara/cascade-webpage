@@ -84,12 +84,12 @@ import cloneDeep from &apos;lodash.clonedeep&apos;; //&apos;lodash/cloneDeep&apo
  * @param msg
  * @return {Message}
  */
-export function importMessage(msg){
+export const importMessage = (msg) =&gt; {
   const localMessage = cloneDeep(msg);
   const obj = new Message();
   obj._init(localMessage);
   return obj;
-}
+};
 
 class Message {
   _init(msg){
@@ -114,7 +114,8 @@ class Message {
     else return null;
   }
   get messageType () { return this._messageType; }
-}</code></pre>
+}
+</code></pre>
 
 </div>
 

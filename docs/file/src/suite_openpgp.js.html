@@ -235,7 +235,7 @@ export class OpenPGP extends Suite {
 
     let signatureObj = {};
     if (keys.privateKeys &amp;&amp; encrypted.signature) { // if detached is true
-      const signatureObjectList = OpenPGP._listFromOpenPgpSig(encrypted.signature.packets, signingKeys);
+      const signatureObjectList = await OpenPGP._listFromOpenPgpSig(encrypted.signature.packets, signingKeys);
       signatureObj = {signature: createSignature(&apos;openpgp&apos;, &apos;public_key_sign&apos;, signatureObjectList, {})};
     }
 
@@ -303,7 +303,7 @@ export class OpenPGP extends Suite {
       privateKeys: keys.privateKeys // for signing (optional)
     };
     const signature = await openpgp.sign(Object.assign(opt, options));
-    const signatureObjectList = OpenPGP._listFromOpenPgpSig(signature.signature.packets, keys.privateKeys);
+    const signatureObjectList = await OpenPGP._listFromOpenPgpSig(signature.signature.packets, keys.privateKeys);
     return {signature: createSignature(&apos;openpgp&apos;, &apos;public_key_sign&apos;, signatureObjectList, {})};
   }
 
@@ -333,19 +333,20 @@ export class OpenPGP extends Suite {
     return verified.concat(list.unverified);
   }
 
-  static _listFromOpenPgpSig (signatures, keys) {
+  static async _listFromOpenPgpSig (signatures, keys) {
     if (!(signatures instanceof Array)) throw new Error(&apos;InvalidSignatureList&apos;);
 
     const externalKeyIds = [];
     keys.map( (x) =&gt; x.getKeys().map( (k) =&gt; { externalKeyIds.push(utilKeyId.fromOpenPgpKey(k));} ) );
 
+    const openpgp = getOpenPgp();
     const signatureObjects = [];
-    externalKeyIds.map( (fp) =&gt; {
+    await Promise.all(externalKeyIds.map( async (fp) =&gt; {
       const correspondingSig = signatures.filter( (sig) =&gt; sig.issuerKeyId.toHex() === fp.toHex().slice(0,16));
-      correspondingSig.map((sig) =&gt; {
-        signatureObjects.push(createRawSignature(sig.write(), fp));
-      });
-    });
+      await Promise.all(correspondingSig.map(async (sig) =&gt; {
+        signatureObjects.push(createRawSignature(await openpgp.stream.readToEnd(sig.write()), fp));
+      }));
+    }));
 
     return signatureObjects;
   }
@@ -382,7 +383,8 @@ export class OpenPGP extends Suite {
 
     return {signatureObjects, unverified};
   }
-}</code></pre>
+}
+</code></pre>
 
 </div>
 

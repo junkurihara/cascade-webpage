@@ -85,7 +85,7 @@ import * as core from &apos;./core.js&apos;;
 import cloneDeep from &apos;lodash.clonedeep&apos;;//&apos;lodash/cloneDeep&apos;;
 
 
-export async function createEncryptionCascade({keys, procedure}){
+export const createEncryptionCascade = async ({keys, procedure}) =&gt; {
   const localKeys = cloneDeep(keys);
   const localProcedure = procedure.map( (x) =&gt; cloneDeep(x));
 
@@ -94,9 +94,9 @@ export async function createEncryptionCascade({keys, procedure}){
   await cascade._initEncryptionProcedure();
 
   return cascade;
-}
+};
 
-export function createDecryptionCascade({keys, encrypted}){
+export const createDecryptionCascade = ({keys, encrypted}) =&gt; {
   const localKeys = cloneDeep(keys);
 
   const cascade = new Cascade();
@@ -104,7 +104,7 @@ export function createDecryptionCascade({keys, encrypted}){
   cascade._initDecryptionProcedure();
 
   return cascade;
-}
+};
 
 ////////////////////
 const modes = [&apos;encrypt&apos;, &apos;decrypt&apos;];

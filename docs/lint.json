@@ -33,7 +33,7 @@
       },
       {
         "lineNumber": 61,
-        "line": "export async function encrypt({message, keys, config}){"
+        "line": "export const encrypt = async ({message, keys, config}) => {"
       }
     ],
     "codeParams": [
@@ -75,7 +75,7 @@
       },
       {
         "lineNumber": 99,
-        "line": "export async function decrypt({data, keys}){"
+        "line": "export const decrypt = async ({data, keys}) => {"
       }
     ],
     "codeParams": [
@@ -120,7 +120,7 @@
       },
       {
         "lineNumber": 133,
-        "line": "export async function sign({message, keys, config}){"
+        "line": "export const sign = async ({message, keys, config}) => {"
       }
     ],
     "codeParams": [
@@ -166,7 +166,7 @@
       },
       {
         "lineNumber": 158,
-        "line": "export async function verify({message, signature, keys}){"
+        "line": "export const verify = async ({message, signature, keys}) => {"
       }
     ],
     "codeParams": [
@@ -216,7 +216,7 @@
       },
       {
         "lineNumber": 71,
-        "line": "export async function importKeys(format='string', {keys, suite, mode}){"
+        "line": "export const importKeys = async (format='string', {keys, suite, mode}) => {"
       }
     ],
     "codeParams": [
@@ -264,7 +264,7 @@
       },
       {
         "lineNumber": 90,
-        "line": "async function importKeyStrings({keys, suite, mode}){"
+        "line": "const importKeyStrings = async ({keys, suite, mode}) => {"
       }
     ],
     "codeParams": [
@@ -310,7 +310,7 @@
       },
       {
         "lineNumber": 132,
-        "line": "async function importKeyObjects({keys, suite, mode}){"
+        "line": "const importKeyObjects = async ({keys, suite, mode}) => {"
       }
     ],
     "codeParams": [

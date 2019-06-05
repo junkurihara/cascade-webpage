@@ -80,7 +80,7 @@ import msgpack from &apos;msgpack-lite&apos;;
 import {importEncryptedBuffer, EncryptedMessage} from &apos;./encrypted_message.js&apos;;
 import {importSignatureBuffer, Signature} from &apos;./signature.js&apos;;
 
-export function importCascadedBuffer(serialized){
+export const importCascadedBuffer = (serialized) =&gt; {
   if (!(serialized instanceof Uint8Array)) throw new Error(&apos;NonUint8ArraySerializedData&apos;);
   let des;
   try {
@@ -97,9 +97,9 @@ export function importCascadedBuffer(serialized){
   });
 
   return createCascadedData(desComponentList);
-}
+};
 
-export function createCascadedData(data) {
+export const createCascadedData = (data) =&gt; {
   // assertion
   if (!(data instanceof Array)) throw new Error(&apos;NotArrayForCascadedData&apos;);
   data.map( (obj) =&gt; {
@@ -109,7 +109,7 @@ export function createCascadedData(data) {
   });
 
   return new CascadedData(data);
-}
+};
 
 export class CascadedData extends Array {
   constructor(data){

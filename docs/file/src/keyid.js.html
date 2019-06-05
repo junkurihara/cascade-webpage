@@ -87,11 +87,11 @@ import cloneDeep from &apos;lodash.clonedeep&apos;;
  * @param len
  * @return {KeyId}
  */
-export function fromOpenPgpKey(keyObject, len=config.publicKeyIdLEN){
+export const fromOpenPgpKey = (keyObject, len=config.publicKeyIdLEN) =&gt; {
   const fp = keyObject.getFingerprint();
   const buf = jseu.encoder.hexStringToArrayBuffer(fp);
   return createKeyId(buf.slice(0, len));
-}
+};
 
 /**
  * Calculate key Id from jwk-formatted key
@@ -101,10 +101,10 @@ export function fromOpenPgpKey(keyObject, len=config.publicKeyIdLEN){
  * @param len
  * @return {Promise&lt;KeyId&gt;}
  */
-export async function fromJscuKey(keyObject, len=config.publicKeyIdLEN) {
+export const fromJscuKey = async (keyObject, len=config.publicKeyIdLEN) =&gt; {
   const thumbPrintBuf = await keyObject.getJwkThumbprint(config.publicKeyIdHash, &apos;binary&apos;);
   return createKeyId(thumbPrintBuf.slice(0, len));
-}
+};
 
 /**
  * Just a hash of raw binary key
@@ -112,18 +112,18 @@ export async function fromJscuKey(keyObject, len=config.publicKeyIdLEN) {
  * @param len
  * @return {Promise&lt;KeyId&gt;}
  */
-export async function fromRawKey(bin, len = config.sessionKeyIdLength) {
+export const fromRawKey = async (bin, len = config.sessionKeyIdLength) =&gt; {
   const jscu = getJscu();
   const digest = await jscu.hash.compute(bin, config.sessionKeyIdHash);
   return createKeyId(digest.slice(0, len));
-}
+};
 
 
-export function createKeyId(keyId){
+export const createKeyId = (keyId) =&gt; {
   if(!(keyId instanceof Uint8Array)) throw new Error(&apos;NotUint8ArrayKeyId&apos;);
   const localKeyId = cloneDeep(keyId);
   return new KeyId(localKeyId);
-}
+};
 
 export class KeyId extends Uint8Array {
   // eslint-disable-next-line no-useless-constructor
@@ -140,11 +140,11 @@ export class KeyId extends Uint8Array {
 
 
 // NOTE: KeyIdList is used only for EncryptedMessage generated in OpenPGP.
-export function createKeyIdList (keyIds) {
+export const createKeyIdList = (keyIds) =&gt; {
   const obj = new KeyIdList();
   obj._init(keyIds);
   return obj;
-}
+};
 
 export class KeyIdList extends Array {
   _init(keyIds){
@@ -159,7 +159,8 @@ export class KeyIdList extends Array {
   toArray() { return Array.from(this); }
 
   map(callback) { return this.toArray().map(callback); }
-}</code></pre>
+}
+</code></pre>
 
 </div>
 

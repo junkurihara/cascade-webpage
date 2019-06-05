@@ -143,7 +143,7 @@ export class Keys {
  * @param mode
  * @return {Promise&lt;Keys&gt;}
  */
-export async function importKeys(format=&apos;string&apos;, {keys, suite, mode}){
+export const importKeys = async (format=&apos;string&apos;, {keys, suite, mode}) =&gt; {
   const localFormat = cloneDeep(format);
   const localKeys = cloneDeep(keys);
   const localSuite = cloneDeep(suite);
@@ -152,7 +152,7 @@ export async function importKeys(format=&apos;string&apos;, {keys, suite, mode})
   const keyObj = new Keys();
   await keyObj.from(localFormat, {keys: localKeys, suite: localSuite, mode: localMode});
   return keyObj;
-}
+};
 
 
 /**
@@ -162,7 +162,7 @@ export async function importKeys(format=&apos;string&apos;, {keys, suite, mode})
  * @param mode
  * @return {Promise&lt;{keys, suite: *, mode: *}&gt;}
  */
-async function importKeyStrings({keys, suite, mode}){
+const importKeyStrings = async ({keys, suite, mode}) =&gt; {
   const keyObjects = {};
 
   if (keys.sessionKey) keyObjects.sessionKey = keys.sessionKey; // symmetric key
@@ -195,7 +195,7 @@ async function importKeyStrings({keys, suite, mode}){
   }));
 
   return { keys: keyObjects, suite, mode };
-}
+};
 
 /**
  * just import from key object
@@ -204,7 +204,7 @@ async function importKeyStrings({keys, suite, mode}){
  * @param mode
  * @return {Promise&lt;{keys, suite: *, mode: *}&gt;}
  */
-async function importKeyObjects({keys, suite, mode}){
+const importKeyObjects = async ({keys, suite, mode}) =&gt; {
   const keyObjects = {};
 
   if (keys.sessionKey) keyObjects.sessionKey = keys.sessionKey; // symmetric key
@@ -214,7 +214,7 @@ async function importKeyObjects({keys, suite, mode}){
   if (keys.privateKeys) keyObjects.privateKeys = keys.privateKeys;
 
   return {keys: keyObjects, suite, mode};
-}
+};
 
 
 /**
@@ -222,7 +222,7 @@ async function importKeyObjects({keys, suite, mode}){
  * @param keyParams
  * @return {Promise&lt;*&gt;}
  */
-export async function generateKeyObject(keyParams) {
+export const generateKeyObject = async (keyParams) =&gt; {
   const localKeyParams = cloneDeep(keyParams);
   let returnKey;
   if (localKeyParams.suite === &apos;openpgp&apos;) { /** OpenPGP **/
@@ -249,7 +249,8 @@ export async function generateKeyObject(keyParams) {
   else throw new Error(&apos;UnsupportedCryptoSuite&apos;);
 
   return returnKey;
-}</code></pre>
+};
+</code></pre>
 
 </div>
 

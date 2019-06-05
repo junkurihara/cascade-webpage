@@ -85,7 +85,7 @@ const suites = [&apos;jscu&apos;, &apos;openpgp&apos;];
 const keyTypes = [&apos;public_key_encrypt&apos;, &apos;session_key_encrypt&apos;];
 
 
-export function importEncryptedBuffer(serialized){
+export const importEncryptedBuffer = (serialized) =&gt; {
   if (!(serialized instanceof Uint8Array)) throw new Error(&apos;NonUint8ArraySerializedData&apos;);
   let des;
   try {
@@ -102,9 +102,9 @@ export function importEncryptedBuffer(serialized){
   });
 
   return createEncryptedMessage( des.suite, des.keyType, messageList, des.options );
-}
+};
 
-export function importRawEncryptedBufferList(array){
+export const importRawEncryptedBufferList = (array) =&gt; {
   if (!(array instanceof Array)) throw new Error(&apos;NotArrayOfSerializedData&apos;);
   array.forEach( (ser) =&gt; {
     if(!(ser instanceof Uint8Array)) throw new Error(&apos;NotUint8ArraySerializedData&apos;);
@@ -121,23 +121,23 @@ export function importRawEncryptedBufferList(array){
   } catch (e) { throw new Error(`FailedToParseRawEncryptedMessage: ${e.message}`); }
 
   return deserializedArray;
-}
+};
 
 
-export function createEncryptedMessage(suite, keyType, message, options = {}) {
+export const createEncryptedMessage = (suite, keyType, message, options = {}) =&gt; {
   // assertion
   if (suites.indexOf(suite) &lt; 0) throw new Error(&apos;UnsupportedSuite&apos;);
   if (keyTypes.indexOf(keyType) &lt; 0) throw new Error(&apos;UnsupportedKeyType&apos;);
 
   return new EncryptedMessage(suite, keyType, message, options);
-}
+};
 
-export function createRawEncryptedMessage(data, keyId, params) {
+export const createRawEncryptedMessage = (data, keyId, params) =&gt; {
   if (!(data instanceof Uint8Array)) throw new Error(&apos;NonUint8ArrayData&apos;);
   if (!(keyId instanceof KeyId) &amp;&amp; !(keyId instanceof KeyIdList)) throw new Error(&apos;NonKeyIdOrKeyIdListObject&apos;);
 
   return new RawEncryptedMessage(data, keyId, params);
-}
+};
 
 export class EncryptedMessage {
   constructor(suite, keyType, message, options = {}) {
@@ -224,7 +224,8 @@ export class RawEncryptedMessageList extends Array {
 
   map(callback) { return this.toArray().map(callback); }
   filter(callback) { return this.toArray().filter(callback); }
-}</code></pre>
+}
+</code></pre>
 
 </div>
 
