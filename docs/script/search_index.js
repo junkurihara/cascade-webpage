@@ -7,37 +7,19 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/api.basic.encrypt.spec.js.html#lineNumber12",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.basic.keygen.spec.js.html#lineNumber10",
-    "",
-    "test"
-  ],
-  [
-    "",
     "test-file/test/api.basic.msgpack.spec.js.html#lineNumber12",
     "",
     "test"
   ],
   [
     "",
-    "test-file/test/api.basic.params.spec.js.html#lineNumber10",
+    "test-file/test/api.basic.sign.spec.js.html#lineNumber12",
     "",
     "test"
   ],
   [
     "",
     "test-file/test/api.basic.encrypt-sign.spec.js.html#lineNumber12",
-    "",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.basic.sign.spec.js.html#lineNumber12",
     "",
     "test"
   ],
@@ -55,67 +37,55 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/api.basic.keygen.spec.js.html#lineNumber41",
-    " JSCU EC public key pair generation",
+    "test-file/test/api.basic.encrypt.spec.js.html#lineNumber12",
+    "",
     "test"
   ],
   [
     "",
-    "test-file/test/api.basic.keygen.spec.js.html#lineNumber63",
-    " JSCU RSA public key pair generation",
-    "test"
-  ],
-  [
+    "test-file/test/api.basic.keygen.spec.js.html#lineNumber10",
     "",
-    "test-file/test/api.basic.keygen.spec.js.html#lineNumber52",
-    " JSCU protected EC public key pair generation",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.basic.keygen.spec.js.html#lineNumber74",
-    " JSCU protected RSA public key pair generation",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.basic.keygen.spec.js.html#lineNumber94",
-    " JSCU symmetric session key generation",
     "test"
   ],
   [
     "",
     "test-file/test/api.basic.keygen.spec.js.html#lineNumber15",
-    " OpenPGP key generation with passphrase",
+    " JSCU EC public key pair generation",
     "test"
   ],
   [
     "",
-    "test-file/test/api.basic.keygen.spec.js.html#lineNumber27",
-    " OpenPGP key generation without passphrase",
+    "test-file/test/api.basic.keygen.spec.js.html#lineNumber37",
+    " JSCU RSA public key pair generation",
     "test"
   ],
   [
     "",
-    "test-file/test/api.basic.keygen.spec.js.html#lineNumber85",
-    " OpenPGP symmetric session key generation",
+    "test-file/test/api.basic.keygen.spec.js.html#lineNumber26",
+    " JSCU protected EC public key pair generation",
     "test"
   ],
   [
     "",
-    "test-file/test/api.basic.params.spec.js.html#lineNumber21",
-    " check if cascade.config can be changed correctly",
+    "test-file/test/api.basic.keygen.spec.js.html#lineNumber48",
+    " JSCU protected RSA public key pair generation",
     "test"
   ],
   [
     "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber100",
+    "test-file/test/api.basic.keygen.spec.js.html#lineNumber59",
+    " JSCU symmetric session key generation",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber80",
     " jscu: EC/RSA encryption and signing hybrid-step procedure test via public key encrypt",
     "test"
   ],
   [
     "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber107",
+    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber87",
     " jscu: EC/RSA encryption and signing hybrid-step procedure test via public key encrypt with ephemeralKeys",
     "test"
   ],
@@ -169,12 +139,6 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/api.basic.encrypt-sign.spec.js.html#lineNumber53",
-    " jscu: EC/RSA encryption and signing test with ephemeral ECDH keys",
-    "test"
-  ],
-  [
-    "",
     "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber72",
     " jscu: EC/RSA encryption and signing tribrid-step procedure test via session key encrypt",
     "test"
@@ -205,19 +169,19 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/api.basic.encrypt.spec.js.html#lineNumber103",
-    " jscu: EC/RSA encryption test with multiple public keys",
-    "test"
-  ],
-  [
-    "",
     "test-file/test/api.basic.msgpack.spec.js.html#lineNumber60",
     " jscu: EC/RSA encryption test with multiple public keys",
     "test"
   ],
   [
     "",
-    "test-file/test/api.basic.encrypt.spec.js.html#lineNumber135",
+    "test-file/test/api.basic.encrypt.spec.js.html#lineNumber77",
+    " jscu: EC/RSA encryption test with multiple public keys",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/api.basic.encrypt.spec.js.html#lineNumber109",
     " jscu: EC/RSA encryption test with multiple public keys with ephemeral ECDH",
     "test"
   ],
@@ -229,7 +193,7 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/api.basic.sign.spec.js.html#lineNumber78",
+    "test-file/test/api.basic.sign.spec.js.html#lineNumber51",
     " jscu: EC/RSA signing test with multiple secret keys",
     "test"
   ],
@@ -237,90 +201,6 @@ window.esdocSearchIndex = [
     "",
     "test-file/test/api.basic.encrypt-sign-session.spec.js.html#lineNumber25",
     " jscu: symmetric key encryption and public key signing test",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.basic.encrypt-sign.spec.js.html#lineNumber110",
-    " mix1 (encrypt: openpgp, sign: jscu): RSA/EC encryption and signing test",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.basic.encrypt-sign.spec.js.html#lineNumber139",
-    " mix2 (encrypt: jscu, sign: openpgp): RSA/EC encryption and sining test",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.basic.encrypt-sign.spec.js.html#lineNumber167",
-    " mix2 (encrypt: jscu, sign: openpgp): RSA/EC encryption and sining test with ephemeral ECDH keys",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber114",
-    " openpgp: EC/RSA encryption and signing hybrid-step procedure test via public key encrypt",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber85",
-    " openpgp: EC/RSA encryption and signing hybrid-step procedure test via session key encrypt",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber80",
-    " openpgp: EC/RSA encryption and signing mono-step procedure test",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.cascade.encrypt-sign.spec.js.html#lineNumber92",
-    " openpgp: EC/RSA encryption and signing tribrid-step procedure test via session key encrypt",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.cascade.extract-insert.spec.js.html#lineNumber33",
-    " openpgp: EC/RSA encryption and signing tribrid-step procedure test via session key encrypt",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.basic.encrypt-sign.spec.js.html#lineNumber81",
-    " openpgp: RSA/EC encryption and signing test",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.basic.encrypt.spec.js.html#lineNumber77",
-    " openpgp: RSA/EC encryption test",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.basic.msgpack.spec.js.html#lineNumber97",
-    " openpgp: RSA/EC encryption test",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.basic.sign.spec.js.html#lineNumber51",
-    " openpgp: RSA/EC signing test",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.basic.sign.spec.js.html#lineNumber111",
-    " openpgp: RSA/EC signing test with multiple secret keys",
-    "test"
-  ],
-  [
-    "",
-    "test-file/test/api.basic.encrypt-sign-session.spec.js.html#lineNumber53",
-    " openpgp: symmetric key encryption and public key signing test",
     "test"
   ],
   [
@@ -357,12 +237,6 @@ window.esdocSearchIndex = [
     "crypto-cascade/src/keys.js~keys",
     "class/src/keys.js~Keys.html",
     "<span>Keys</span> <span class=\"search-result-import-path\">crypto-cascade/src/keys.js</span>",
-    "class"
-  ],
-  [
-    "crypto-cascade/src/suite_openpgp.js~openpgp",
-    "class/src/suite_openpgp.js~OpenPGP.html",
-    "<span>OpenPGP</span> <span class=\"search-result-import-path\">crypto-cascade/src/suite_openpgp.js</span>",
     "class"
   ],
   [
@@ -468,12 +342,6 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "crypto-cascade/src/keyid.js~fromopenpgpkey",
-    "function/index.html#static-function-fromOpenPgpKey",
-    "<span>fromOpenPgpKey</span> <span class=\"search-result-import-path\">crypto-cascade/src/keyid.js</span>",
-    "function"
-  ],
-  [
     "crypto-cascade/src/keyid.js~fromrawkey",
     "function/index.html#static-function-fromRawKey",
     "<span>fromRawKey</span> <span class=\"search-result-import-path\">crypto-cascade/src/keyid.js</span>",
@@ -495,12 +363,6 @@ window.esdocSearchIndex = [
     "crypto-cascade/src/util.js~getjscu",
     "function/index.html#static-function-getJscu",
     "<span>getJscu</span> <span class=\"search-result-import-path\">crypto-cascade/src/util.js</span>",
-    "function"
-  ],
-  [
-    "crypto-cascade/src/util.js~getopenpgp",
-    "function/index.html#static-function-getOpenPgp",
-    "<span>getOpenPgp</span> <span class=\"search-result-import-path\">crypto-cascade/src/util.js</span>",
     "function"
   ],
   [
@@ -1350,60 +1212,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/suite_openpgp.js",
-    "file/src/suite_openpgp.js.html",
-    "src/suite_openpgp.js",
-    "file"
-  ],
-  [
-    "src/suite_openpgp.js~openpgp._listtoopenpgpsig",
-    "class/src/suite_openpgp.js~OpenPGP.html#static-method-_ListToOpenPgpSig",
-    "src/suite_openpgp.js~OpenPGP._ListToOpenPgpSig",
-    "method"
-  ],
-  [
-    "src/suite_openpgp.js~openpgp._listfromopenpgpsig",
-    "class/src/suite_openpgp.js~OpenPGP.html#static-method-_listFromOpenPgpSig",
-    "src/suite_openpgp.js~OpenPGP._listFromOpenPgpSig",
-    "method"
-  ],
-  [
-    "src/suite_openpgp.js~openpgp.decrypt",
-    "class/src/suite_openpgp.js~OpenPGP.html#static-method-decrypt",
-    "src/suite_openpgp.js~OpenPGP.decrypt",
-    "method"
-  ],
-  [
-    "src/suite_openpgp.js~openpgp.encrypt",
-    "class/src/suite_openpgp.js~OpenPGP.html#static-method-encrypt",
-    "src/suite_openpgp.js~OpenPGP.encrypt",
-    "method"
-  ],
-  [
-    "src/suite_openpgp.js~openpgp.generatekey",
-    "class/src/suite_openpgp.js~OpenPGP.html#static-method-generateKey",
-    "src/suite_openpgp.js~OpenPGP.generateKey",
-    "method"
-  ],
-  [
-    "src/suite_openpgp.js~openpgp.importkey",
-    "class/src/suite_openpgp.js~OpenPGP.html#static-method-importKey",
-    "src/suite_openpgp.js~OpenPGP.importKey",
-    "method"
-  ],
-  [
-    "src/suite_openpgp.js~openpgp.sign",
-    "class/src/suite_openpgp.js~OpenPGP.html#static-method-sign",
-    "src/suite_openpgp.js~OpenPGP.sign",
-    "method"
-  ],
-  [
-    "src/suite_openpgp.js~openpgp.verify",
-    "class/src/suite_openpgp.js~OpenPGP.html#static-method-verify",
-    "src/suite_openpgp.js~OpenPGP.verify",
-    "method"
-  ],
-  [
     "src/util.js",
     "file/src/util.js.html",
     "src/util.js",
@@ -1437,12 +1245,6 @@ window.esdocSearchIndex = [
     "test/api.basic.msgpack.spec.js",
     "test-file/test/api.basic.msgpack.spec.js.html",
     "test/api.basic.msgpack.spec.js",
-    "testFile"
-  ],
-  [
-    "test/api.basic.params.spec.js",
-    "test-file/test/api.basic.params.spec.js.html",
-    "test/api.basic.params.spec.js",
     "testFile"
   ],
   [

@@ -40,7 +40,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/signature.js~Signature.html">Signature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite.js~Suite.html">Suite</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite_jscu.js~Jscu.html">Jscu</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite_openpgp.js~OpenPGP.html">OpenPGP</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createDecryptionCascade">createDecryptionCascade</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createEncryptionCascade">createEncryptionCascade</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createCascadedData">createCascadedData</a></span></span></li>
@@ -57,7 +56,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createKeyId">createKeyId</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createKeyIdList">createKeyIdList</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromJscuKey">fromJscuKey</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromOpenPgpKey">fromOpenPgpKey</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromRawKey">fromRawKey</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateKeyObject">generateKeyObject</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-importKeys">importKeys</a></span></span></li>
@@ -66,7 +64,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createSignature">createSignature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-importSignatureBuffer">importSignatureBuffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getJscu">getJscu</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getOpenPgp">getOpenPgp</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -76,7 +73,6 @@
  * cascade.js
  */
 
-import {OpenPGP} from &apos;./suite_openpgp.js&apos;;
 import {Jscu} from &apos;./suite_jscu.js&apos;;
 import {generateKeyObject, importKeys, Keys} from &apos;./keys.js&apos;;
 import {Signature} from &apos;./signature.js&apos;;
@@ -168,7 +164,6 @@ class Cascade extends Array {
       if (keyParams.keyParams.type === &apos;session&apos;) nextStepMessage = onetimeKey.key;
       else {
         if (keyParams.suite === &apos;jscu&apos;) nextStepMessage = await onetimeKey.privateKey.export(&apos;der&apos;);
-        else if (keyParams.suite === &apos;openpgp&apos;) nextStepMessage = onetimeKey.privateKey.toPacketlist().write();
         else throw new Error(&apos;UnknownSuite&apos;);
       }
       this[idx+1].message = nextStepMessage;
@@ -228,9 +223,6 @@ class Cascade extends Array {
           if (this[idx-1].data.message.suite === &apos;jscu&apos;){
             nextDecryptionKeyObject = {privateKeys: [await Jscu.importKey(&apos;der&apos;, decrypted[idx].data)]};
           }
-          else if (this[idx-1].data.message.suite === &apos;openpgp&apos;){
-            nextDecryptionKeyObject = {privateKeys: [await OpenPGP.importKey(&apos;der&apos;, decrypted[idx].data)]};
-          }
           else throw new Error(&apos;UnknownSuite&apos;);
         }
 
@@ -238,14 +230,6 @@ class Cascade extends Array {
         if (this[idx-1].data.signature instanceof Signature &amp;&amp; typeof verificationKeys !== &apos;undefined&apos;){
           nextDecryptionKeyObject.publicKeys = verificationKeys;
           suiteObject.sign_verify = this[idx-1].data.signature.suite;
-          modeArray.push(&apos;verify&apos;);
-        }
-        // WA for embedded signature
-        else if (typeof this[idx-1].data.message !== &apos;undefined&apos;
-          &amp;&amp; this[idx-1].data.message.suite === &apos;openpgp&apos;
-          &amp;&amp; typeof verificationKeys !== &apos;undefined&apos; ) {
-          nextDecryptionKeyObject.publicKeys = verificationKeys;
-          suiteObject.sign_verify = &apos;openpgp&apos;;
           modeArray.push(&apos;verify&apos;);
         }
 

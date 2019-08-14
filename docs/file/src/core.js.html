@@ -40,7 +40,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/signature.js~Signature.html">Signature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite.js~Suite.html">Suite</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite_jscu.js~Jscu.html">Jscu</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite_openpgp.js~OpenPGP.html">OpenPGP</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createDecryptionCascade">createDecryptionCascade</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createEncryptionCascade">createEncryptionCascade</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createCascadedData">createCascadedData</a></span></span></li>
@@ -57,7 +56,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createKeyId">createKeyId</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createKeyIdList">createKeyIdList</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromJscuKey">fromJscuKey</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromOpenPgpKey">fromOpenPgpKey</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromRawKey">fromRawKey</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateKeyObject">generateKeyObject</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-importKeys">importKeys</a></span></span></li>
@@ -66,7 +64,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createSignature">createSignature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-importSignatureBuffer">importSignatureBuffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getJscu">getJscu</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getOpenPgp">getOpenPgp</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -78,17 +75,11 @@
 
 import {generateKeyObject} from &apos;./keys.js&apos;;
 import {importMessage} from &apos;./message.js&apos;;
-import {OpenPGP} from &apos;./suite_openpgp.js&apos;;
 import {Jscu} from &apos;./suite_jscu.js&apos;;
 
 /**
  * Generate key (pair). This API must be called externally.
  * @param keyParams {object}: a parameter to generate keys in the form of like
- * OpenPGP:
- * { suite: &apos;openpgp&apos;,
- *   userIds,
- *   passphrase: &apos;omg&apos;,
- *   keyParams: { type: &apos;ECC&apos;, keyExpirationTime: 0, curve: &apos;P-256&apos; } }
  * Simple Crypto Suite using WebCryptoAPI/OpenSSL:
  * { suite: &apos;jscu&apos;,
  *   passphrase: &apos;omg&apos;,
@@ -103,15 +94,7 @@ export const generateKey = async (keyParams) =&gt; {
     return keyObj;
   }
   else {
-    if(keyParams.suite === &apos;openpgp&apos;) { /** OpenPGP **/
-      return {
-        publicKey: { keyString: keyObj.publicKey.armor(), keyId: keyObj.keyId },
-        privateKey: Object.assign(
-          { keyString: keyObj.privateKey.armor(), keyId: keyObj.keyId },
-          (keyParams.passphrase) ? {passphrase: keyParams.passphrase} : {})
-      };
-    }
-    else if (keyParams.suite === &apos;jscu&apos;) { /** js-crypto-utils **/
+    if (keyParams.suite === &apos;jscu&apos;) { /** js-crypto-utils **/
       return {
         publicKey: {
           keyString: await keyObj.publicKey.export(&apos;pem&apos;, {outputPublic: true}),
@@ -143,10 +126,7 @@ export const encrypt = async ({message, keys, config}) =&gt; {
 
   // do signing
   let signed = {};
-  if (typeof config.sign !== &apos;undefined&apos; &amp;&amp; config.sign.required &amp;&amp;
-    (typeof config.encrypt === &apos;undefined&apos; ||
-    (typeof config.encrypt !== &apos;undefined&apos; &amp;&amp; !(config.encrypt.suite === &apos;openpgp&apos; &amp;&amp; config.sign.suite === &apos;openpgp&apos;)))
-  ){
+  if (typeof config.sign !== &apos;undefined&apos; &amp;&amp; config.sign.required){
     if (keys.suite.sign_verify !== config.sign.suite) throw new Error(&apos;UnmatchedKeyTypeToSigningSuite&apos;);
     if (!keys.canSign()) throw new Error(&apos;UnsupportedKeyForSign&apos;);
     signed = await cryptoSuite(keys.suite.sign_verify).sign({
@@ -250,7 +230,6 @@ export const verify = async ({message, signature, keys}) =&gt; {
 const cryptoSuite = (suiteName) =&gt; {
   let suiteObj;
   if (suiteName === &apos;jscu&apos;) suiteObj = Jscu;
-  else if (suiteName === &apos;openpgp&apos;) suiteObj = OpenPGP;
   else throw new Error(&apos;UnknownSuite&apos;);
   return suiteObj;
 };

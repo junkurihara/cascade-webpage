@@ -40,7 +40,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/signature.js~Signature.html">Signature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite.js~Suite.html">Suite</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite_jscu.js~Jscu.html">Jscu</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite_openpgp.js~OpenPGP.html">OpenPGP</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createDecryptionCascade">createDecryptionCascade</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createEncryptionCascade">createEncryptionCascade</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createCascadedData">createCascadedData</a></span></span></li>
@@ -57,7 +56,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createKeyId">createKeyId</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createKeyIdList">createKeyIdList</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromJscuKey">fromJscuKey</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromOpenPgpKey">fromOpenPgpKey</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromRawKey">fromRawKey</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateKeyObject">generateKeyObject</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-importKeys">importKeys</a></span></span></li>
@@ -66,7 +64,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createSignature">createSignature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-importSignatureBuffer">importSignatureBuffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getJscu">getJscu</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getOpenPgp">getOpenPgp</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -76,7 +73,6 @@
  * utils.js
  */
 
-import params from &apos;./config.js&apos;;
 
 export const getJscu = () =&gt; {
   let jscu;
@@ -91,40 +87,6 @@ export const getJscu = () =&gt; {
     } // work around
   }
   return jscu;
-};
-
-export const getOpenPgp = () =&gt; {
-  // load openpgp
-  let openpgp;
-  let workerPath;
-  if(typeof window !== &apos;undefined&apos; &amp;&amp; typeof window.openpgp !== &apos;undefined&apos;) {
-    openpgp = window.openpgp;
-    workerPath = params.openpgp.workerPathWeb;
-  }
-  else {
-    openpgp = require(&apos;openpgp&apos;);
-    workerPath = params.openpgp.workerPathNode;
-    // const path = require(&apos;path&apos;);
-    // workerPath = path.join(path.resolve(), openpgpDefault.WORKER_PATH);
-  }
-
-  // initialize openpgp
-  try {
-    openpgp.initWorker({path: workerPath}); // set the relative web worker path
-  } catch(e) {
-    console.error(e.message);
-  }
-  openpgp.config.aead_protect = true; // activate fast AEAD mode (not yet OpenPGP standard)
-  openpgp.config.aead_mode = openpgp.enums.aead.eax; // Default, native AES-EAX mode (AEAD)
-  openpgp.config.prefer_hash_algorithm = openpgp.enums.hash.sha512; // use SHA512 (default SHA256)
-  openpgp.config.encryption_cipher = openpgp.enums.symmetric.aes256; // use AES256
-  openpgp.config.compression = openpgp.enums.compression.zlib; // compression prior to encrypt with zlib
-  openpgp.config.integrity_protect = true;
-  openpgp.config.rsa_blinding = true;
-  openpgp.config.show_version = false;
-  openpgp.config.show_comment = false;
-
-  return openpgp;
 };
 </code></pre>
 

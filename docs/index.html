@@ -40,7 +40,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/signature.js~Signature.html">Signature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite.js~Suite.html">Suite</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite_jscu.js~Jscu.html">Jscu</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite_openpgp.js~OpenPGP.html">OpenPGP</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createDecryptionCascade">createDecryptionCascade</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createEncryptionCascade">createEncryptionCascade</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createCascadedData">createCascadedData</a></span></span></li>
@@ -57,7 +56,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createKeyId">createKeyId</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createKeyIdList">createKeyIdList</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromJscuKey">fromJscuKey</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromOpenPgpKey">fromOpenPgpKey</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromRawKey">fromRawKey</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateKeyObject">generateKeyObject</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-importKeys">importKeys</a></span></span></li>
@@ -66,14 +64,13 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createSignature">createSignature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-importSignatureBuffer">importSignatureBuffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getJscu">getJscu</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getOpenPgp">getOpenPgp</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h2 id="cascade---encryption-and-signing-library-for-x-brid-encryption-via-several-cryptographic-suites-">Cascade - Encryption and signing library for x-brid encryption via several cryptographic suites.</h2><p><a href="https://badge.fury.io/js/crypto-cascade"><img src="https://badge.fury.io/js/crypto-cascade.svg" alt="npm version"></a>
 <a href="https://circleci.com/gh/junkurihara/cascade"><img src="https://circleci.com/gh/junkurihara/cascade.svg?style=svg" alt="CircleCI"></a>
-<a href="https://coveralls.io/github/junkurihara/cascade?branch=develop"><img src="https://coveralls.io/repos/github/junkurihara/cascade/badge.svg?branch=develop" alt="Coverage Status"></a>
+<a href="https://codecov.io/gh/junkurihara/cascade"><img src="https://codecov.io/gh/junkurihara/cascade/branch/develop/graph/badge.svg" alt="codecov"></a>
 <a href="https://david-dm.org/junkurihara/cascade"><img src="https://david-dm.org/junkurihara/cascade.svg" alt="Dependencies"></a>
 <a href="https://codeclimate.com/github/junkurihara/cascade/maintainability"><img src="https://api.codeclimate.com/v1/badges/ebead374220cd81a02b9/maintainability" alt="Maintainability"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></p>
@@ -96,19 +93,13 @@
 </ul>
 <p>We can see that by employing those functions at some steps, new types of cryptographic application could be realized.</p>
 <p>We also mention that a classical broadcast encryption based on tree can be possibly instantiated in the context of x-brid encryption. This is from the following observation. First consider to attach public key encryption to all steps, and assume that the plaintext message at each step is the private key used in the previous step. This composes a tree of multiple layers of private key encapsulation that is the core of tree-based broadcast encryption.</p>
-<h1 id="supported-crypto-suites">Supported Crypto Suites</h1><p>This library currently supports two cryptographic suites, OpenPGP and js-crypto-utils. We adopted <a href="https://openpgpjs.org/">openpgpjs</a> as an implementation of OpenPGP. On the other hand, <a href="https://github.com/junkurihara/jscu">js-crypto-utils</a> is a simple crypto suite for plain implementations of cryptographic functions unlike fully-specified suites like OpenPGP. We should note that js-crypto-utils can be viewed as a integrated wrapper or interfaces of RFC standardized functions that are mostly built-in ones of browsers and Node.js.</p>
+<h1 id="supported-crypto-suites">Supported Crypto Suites</h1><p>This library currently supports one cryptographic suite, js-crypto-utils. <a href="https://github.com/junkurihara/jscu">js-crypto-utils</a> is a simple crypto suite for plain implementations of cryptographic functions unlike fully-specified suites like OpenPGP. We should note that js-crypto-utils can be viewed as a integrated wrapper or interfaces of RFC standardized functions that are mostly built-in ones of browsers and Node.js. At the initial implementation, although we had adopted <a href="https://openpgpjs.org/">openpgpjs</a> as a suite, it has been disruptively changing its (internal) APIs to follow the OpenPGP RFC standards and hence we purged the OpenPGP support from cascade due to the toughness of tracking its changes.</p>
 <ul>
 <li>Encryption and decryption:<ul>
 <li>js-crypto-utils<ul>
 <li>Public key encryption (ECDH, HKDF and AES256-GCM combination)</li>
 <li>Public key encryption (RSA-OAEP)</li>
 <li>Session key encryption (AES-GCM)</li>
-</ul>
-</li>
-<li>OpenPGP<ul>
-<li>Public key encryption (Elliptic curve cryptography)</li>
-<li>Public key encryption (RSA)</li>
-<li>Session key encryption (AES-EAX)</li>
 </ul>
 </li>
 </ul>
@@ -120,21 +111,11 @@
 <li>ECDSA signature</li>
 </ul>
 </li>
-<li>OpenPGP<ul>
-<li>RSA signature</li>
-<li>ECDSA signature</li>
-</ul>
-</li>
 </ul>
 </li>
 <li>Key generation:<ul>
 <li>js-crypto-utils<ul>
 <li>Public and private key pair generation w/ and w/o passphrase in PEM armored format (ECC and RSA)</li>
-<li>Session key generation</li>
-</ul>
-</li>
-<li>OpenPGP<ul>
-<li>Public and private key pair generation w/ and w/o passphrase in OpenPGP armored format (ECC and RSA)</li>
 <li>Session key generation</li>
 </ul>
 </li>
@@ -149,12 +130,9 @@ $ yarn add crypto-cascade # from yarn</code>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">import cascade from &apos;crypto-cascade&apos;</code>
 </code></pre>
 <p>Of cource, you can also directly import the source code by cloning this Github repo.</p>
-<h2 id="finishing-up-the-setup">Finishing up the setup</h2><p>The <code>Cascade</code> library doesn&apos;t internally import cryptographic suites, i.e., <code>js-crypto-utils</code> and <code>openpgpjs</code> in a static manner, but it loads them in a dynamic manner. In particular, it calls those suites via <code>require</code> for <code>Node.js</code> and as <code>window</code> objects for browsers. This means that <strong>for browsers, both of or either one of <code>js-crypto-utils</code> (<code>jscu.bundle.js</code>) and <code>openpgpjs</code> (<code>openpgp.js</code>/<code>openpgp.min.js</code>) must be pre-loaded by <code>&lt;script&gt;</code> tags in html files</strong>. Also we should note that for <code>openpgpjs</code>, the webworker file <code>openpgp.worker.js</code>/<code>openpgp.worker.min.js</code> is required to be located in the directory where the <code>openpgp.js</code>/<code>openpgp.min.js</code> exists. For browsers, the default path to <code>openpgp.worker.js</code>/<code>openpgp.worker.min.js</code> is the root of your url path, and you can change it by directly specifying the location as follows.</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">import cascade from &apos;crypto-cascade&apos;;
-cascade.config.openpgp.workerPathWeb = &apos;path/to/openpgp.worker.min.js&apos;;</code>
-</code></pre>
+<h2 id="finishing-up-the-setup">Finishing up the setup</h2><p>The <code>Cascade</code> library doesn&apos;t internally import cryptographic suites, i.e., <code>js-crypto-utils</code> in a static manner, but it loads them in a dynamic manner. In particular, it calls those suites via <code>require</code> for <code>Node.js</code> and as <code>window</code> objects for browsers. This means that <strong>for browsers, <code>js-crypto-utils</code> (<code>jscu.bundle.js</code>) must be pre-loaded by <code>&lt;script&gt;</code> tags in html files</strong>. </p>
 <h1 id="usage">Usage</h1><p>Here we give some basic example of usecases of <code>Cascade</code>. This section is organized as follows. First, we explain how to generate keys in <code>Cascade</code>. Then as a function employed at each step of x-brid encryption, we describe a very basic <em>single</em> encryption and signing operations in <code>Cascade</code>. This can be also viewed as the case where <code>x = 1</code>. After these warmp-ups, we finally show how to employ the x-brid encryption in <code>Cascade</code>. We should really note that this is just an example and the source/test codes and JSDoc is useful to understand the detailed mechanism and usage of <code>Cascade</code>.</p>
-<h2 id="key-generation">Key generation</h2><p><code>Cascade</code> provides a basic function to generate PEM-formatted and OpenPGP-armored public private key pairs. The following example describes an example to generate PEM-formatted public and private keys of elliptic curve cryptography using <code>js-crypto-utils</code>.</p>
+<h2 id="key-generation">Key generation</h2><p><code>Cascade</code> provides a basic function to generate PEM-formatted public/private key pairs. The following example describes an example to generate PEM-formatted public and private keys of elliptic curve cryptography using <code>js-crypto-utils</code>.</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">const keyParam = {
   suite: &apos;jscu&apos;, // use &apos;js-crypto-utils&apos;
   keyParams: { type: &apos;ec&apos;, curve: &apos;P-256&apos; }
@@ -172,7 +150,7 @@ const privateKeyPEM = keyPair.privateKey.keyString; // EC private key in PEM for
 const keyPair = await cascade.generateKey(keyParam);</code>
 </code></pre>
 <p>Then, the protected private key is encoded as <code>EncryptedPrivateKeyInfo</code>.</p>
-<p>Note that in addition to <code>jscu</code> as <code>keyParam.suite</code>, <code>openpgp</code> is also available. The key generation API can generate not only EC public and private key strings but also RSA ones and session keys, where generated session keys are just random bytes given in <code>Uint8Array</code> unlike formatted strings of public and private keys.</p>
+<p>The key generation API can generate not only EC public and private key strings but also RSA ones and session keys, where generated session keys are just random bytes given in <code>Uint8Array</code> unlike formatted strings of public and private keys.</p>
 <h2 id="basic-encryption-simultaneously-with-signing">Basic encryption simultaneously with signing</h2><p>The following example describes how to simply encrypt a message in <code>Uint8Array</code> (<code>String</code> is also accepted) simultaneously with signing on the given plaintext message in <code>Cascade</code>. Since the cascaded encryption, i.e., x-brid encryption, will be employed by chaining this basic encryption and decryption function, we shall firstly explain this basic function and its usage in a step-by-step manner.</p>
 <p>First of all, we need to import keys to be used, and obtain <code>Keys</code> object that will be used to encrypt and decrypt in <code>Cascade</code>.</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">const encryptionKeys = {
@@ -345,7 +323,7 @@ const deserializedExtracted = cascade.importRawEncryptedBufferList(serializedExt
 // recover original EncryptedMessage object]
 deserialized.insert(idx, deserializedExtracted);</code>
 </code></pre>
-<h1 id="note">Note</h1><p>At this point, limitations of <code>Cascade</code> are basically from those of <a href="https://github.com/junkurihara/jscu">js-crypto-utils</a> and <a href="https://openpgpjs.org/">openpgpjs</a>. Please refer to their documents first.</p>
+<h1 id="note">Note</h1><p>At this point, limitations of <code>Cascade</code> are basically from those of <a href="https://github.com/junkurihara/jscu">js-crypto-utils</a>. Please refer to their documents first.</p>
 <h1 id="lisence">Lisence</h1><p>Licensed under the MIT license, see <code>LICENSE</code> file.</p>
 </div>
 </div>

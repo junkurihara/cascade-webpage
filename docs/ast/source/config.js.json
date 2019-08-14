@@ -1,29 +1,29 @@
 {
   "type": "File",
   "start": 0,
-  "end": 1160,
+  "end": 703,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 35,
-      "column": 2
+      "line": 25,
+      "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 1160,
+    "end": 703,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 35,
-        "column": 2
+        "line": 25,
+        "column": 0
       }
     },
     "sourceType": "module",
@@ -31,28 +31,28 @@
       {
         "type": "ExportDefaultDeclaration",
         "start": 22,
-        "end": 1160,
+        "end": 702,
         "loc": {
           "start": {
             "line": 5,
             "column": 0
           },
           "end": {
-            "line": 35,
+            "line": 24,
             "column": 2
           }
         },
         "declaration": {
           "type": "ObjectExpression",
           "start": 37,
-          "end": 1159,
+          "end": 701,
           "loc": {
             "start": {
               "line": 5,
               "column": 15
             },
             "end": {
-              "line": 35,
+              "line": 24,
               "column": 1
             }
           },
@@ -541,277 +541,8 @@
                     }
                   }
                 }
-              ]
-            },
-            {
-              "type": "ObjectProperty",
-              "start": 715,
-              "end": 1157,
-              "loc": {
-                "start": {
-                  "line": 25,
-                  "column": 2
-                },
-                "end": {
-                  "line": 34,
-                  "column": 3
-                }
-              },
-              "method": false,
-              "shorthand": false,
-              "computed": false,
-              "key": {
-                "type": "Identifier",
-                "start": 715,
-                "end": 722,
-                "loc": {
-                  "start": {
-                    "line": 25,
-                    "column": 2
-                  },
-                  "end": {
-                    "line": 25,
-                    "column": 9
-                  },
-                  "identifierName": "openpgp"
-                },
-                "name": "openpgp",
-                "leadingComments": null
-              },
-              "value": {
-                "type": "ObjectExpression",
-                "start": 725,
-                "end": 1157,
-                "loc": {
-                  "start": {
-                    "line": 25,
-                    "column": 12
-                  },
-                  "end": {
-                    "line": 34,
-                    "column": 3
-                  }
-                },
-                "properties": [
-                  {
-                    "type": "ObjectProperty",
-                    "start": 731,
-                    "end": 768,
-                    "loc": {
-                      "start": {
-                        "line": 26,
-                        "column": 4
-                      },
-                      "end": {
-                        "line": 26,
-                        "column": 41
-                      }
-                    },
-                    "method": false,
-                    "shorthand": false,
-                    "computed": false,
-                    "key": {
-                      "type": "Identifier",
-                      "start": 731,
-                      "end": 742,
-                      "loc": {
-                        "start": {
-                          "line": 26,
-                          "column": 4
-                        },
-                        "end": {
-                          "line": 26,
-                          "column": 15
-                        },
-                        "identifierName": "defaultUser"
-                      },
-                      "name": "defaultUser"
-                    },
-                    "value": {
-                      "type": "StringLiteral",
-                      "start": 745,
-                      "end": 768,
-                      "loc": {
-                        "start": {
-                          "line": 26,
-                          "column": 18
-                        },
-                        "end": {
-                          "line": 26,
-                          "column": 41
-                        }
-                      },
-                      "extra": {
-                        "rawValue": "<example@example.com>",
-                        "raw": "'<example@example.com>'"
-                      },
-                      "value": "<example@example.com>"
-                    }
-                  },
-                  {
-                    "type": "ObjectProperty",
-                    "start": 1037,
-                    "end": 1077,
-                    "loc": {
-                      "start": {
-                        "line": 31,
-                        "column": 4
-                      },
-                      "end": {
-                        "line": 31,
-                        "column": 44
-                      }
-                    },
-                    "method": false,
-                    "shorthand": false,
-                    "computed": false,
-                    "key": {
-                      "type": "Identifier",
-                      "start": 1037,
-                      "end": 1050,
-                      "loc": {
-                        "start": {
-                          "line": 31,
-                          "column": 4
-                        },
-                        "end": {
-                          "line": 31,
-                          "column": 17
-                        },
-                        "identifierName": "workerPathWeb"
-                      },
-                      "name": "workerPathWeb",
-                      "leadingComments": null
-                    },
-                    "value": {
-                      "type": "StringLiteral",
-                      "start": 1052,
-                      "end": 1077,
-                      "loc": {
-                        "start": {
-                          "line": 31,
-                          "column": 19
-                        },
-                        "end": {
-                          "line": 31,
-                          "column": 44
-                        }
-                      },
-                      "extra": {
-                        "rawValue": "./openpgp.worker.min.js",
-                        "raw": "'./openpgp.worker.min.js'"
-                      },
-                      "value": "./openpgp.worker.min.js"
-                    },
-                    "leadingComments": [
-                      {
-                        "type": "CommentLine",
-                        "value": " openpgp.worker.js must be located in the place where api_openpgp.js and js-file bundling core-file.",
-                        "start": 775,
-                        "end": 877,
-                        "loc": {
-                          "start": {
-                            "line": 28,
-                            "column": 4
-                          },
-                          "end": {
-                            "line": 28,
-                            "column": 106
-                          }
-                        }
-                      },
-                      {
-                        "type": "CommentLine",
-                        "value": " Namely in this project, they are located in 'dist',",
-                        "start": 882,
-                        "end": 936,
-                        "loc": {
-                          "start": {
-                            "line": 29,
-                            "column": 4
-                          },
-                          "end": {
-                            "line": 29,
-                            "column": 58
-                          }
-                        }
-                      },
-                      {
-                        "type": "CommentLine",
-                        "value": " and it will be './', i.e., the root path of the url, from the viewpoint of bundled file.",
-                        "start": 941,
-                        "end": 1032,
-                        "loc": {
-                          "start": {
-                            "line": 30,
-                            "column": 4
-                          },
-                          "end": {
-                            "line": 30,
-                            "column": 95
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "type": "ObjectProperty",
-                    "start": 1084,
-                    "end": 1152,
-                    "loc": {
-                      "start": {
-                        "line": 33,
-                        "column": 4
-                      },
-                      "end": {
-                        "line": 33,
-                        "column": 72
-                      }
-                    },
-                    "method": false,
-                    "shorthand": false,
-                    "computed": false,
-                    "key": {
-                      "type": "Identifier",
-                      "start": 1084,
-                      "end": 1098,
-                      "loc": {
-                        "start": {
-                          "line": 33,
-                          "column": 4
-                        },
-                        "end": {
-                          "line": 33,
-                          "column": 18
-                        },
-                        "identifierName": "workerPathNode"
-                      },
-                      "name": "workerPathNode"
-                    },
-                    "value": {
-                      "type": "StringLiteral",
-                      "start": 1100,
-                      "end": 1152,
-                      "loc": {
-                        "start": {
-                          "line": 33,
-                          "column": 20
-                        },
-                        "end": {
-                          "line": 33,
-                          "column": 72
-                        }
-                      },
-                      "extra": {
-                        "rawValue": "../node_modules/openpgp/dist/openpgp.worker.min.js",
-                        "raw": "'../node_modules/openpgp/dist/openpgp.worker.min.js'"
-                      },
-                      "value": "../node_modules/openpgp/dist/openpgp.worker.min.js"
-                    }
-                  }
-                ]
-              },
-              "leadingComments": [
+              ],
+              "trailingComments": [
                 {
                   "type": "CommentLine",
                   "value": "//////////////////////////////////////////////////////////",
@@ -825,22 +556,6 @@
                     "end": {
                       "line": 23,
                       "column": 62
-                    }
-                  }
-                },
-                {
-                  "type": "CommentLine",
-                  "value": " OpenPGP",
-                  "start": 702,
-                  "end": 712,
-                  "loc": {
-                    "start": {
-                      "line": 24,
-                      "column": 2
-                    },
-                    "end": {
-                      "line": 24,
-                      "column": 12
                     }
                   }
                 }
@@ -1063,70 +778,6 @@
         "end": {
           "line": 23,
           "column": 62
-        }
-      }
-    },
-    {
-      "type": "CommentLine",
-      "value": " OpenPGP",
-      "start": 702,
-      "end": 712,
-      "loc": {
-        "start": {
-          "line": 24,
-          "column": 2
-        },
-        "end": {
-          "line": 24,
-          "column": 12
-        }
-      }
-    },
-    {
-      "type": "CommentLine",
-      "value": " openpgp.worker.js must be located in the place where api_openpgp.js and js-file bundling core-file.",
-      "start": 775,
-      "end": 877,
-      "loc": {
-        "start": {
-          "line": 28,
-          "column": 4
-        },
-        "end": {
-          "line": 28,
-          "column": 106
-        }
-      }
-    },
-    {
-      "type": "CommentLine",
-      "value": " Namely in this project, they are located in 'dist',",
-      "start": 882,
-      "end": 936,
-      "loc": {
-        "start": {
-          "line": 29,
-          "column": 4
-        },
-        "end": {
-          "line": 29,
-          "column": 58
-        }
-      }
-    },
-    {
-      "type": "CommentLine",
-      "value": " and it will be './', i.e., the root path of the url, from the viewpoint of bundled file.",
-      "start": 941,
-      "end": 1032,
-      "loc": {
-        "start": {
-          "line": 30,
-          "column": 4
-        },
-        "end": {
-          "line": 30,
-          "column": 95
         }
       }
     }
@@ -2043,462 +1694,6 @@
       }
     },
     {
-      "type": "CommentLine",
-      "value": " OpenPGP",
-      "start": 702,
-      "end": 712,
-      "loc": {
-        "start": {
-          "line": 24,
-          "column": 2
-        },
-        "end": {
-          "line": 24,
-          "column": 12
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "openpgp",
-      "start": 715,
-      "end": 722,
-      "loc": {
-        "start": {
-          "line": 25,
-          "column": 2
-        },
-        "end": {
-          "line": 25,
-          "column": 9
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ":",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 723,
-      "end": 724,
-      "loc": {
-        "start": {
-          "line": 25,
-          "column": 10
-        },
-        "end": {
-          "line": 25,
-          "column": 11
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "{",
-        "beforeExpr": true,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 725,
-      "end": 726,
-      "loc": {
-        "start": {
-          "line": 25,
-          "column": 12
-        },
-        "end": {
-          "line": 25,
-          "column": 13
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "defaultUser",
-      "start": 731,
-      "end": 742,
-      "loc": {
-        "start": {
-          "line": 26,
-          "column": 4
-        },
-        "end": {
-          "line": 26,
-          "column": 15
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ":",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 743,
-      "end": 744,
-      "loc": {
-        "start": {
-          "line": 26,
-          "column": 16
-        },
-        "end": {
-          "line": 26,
-          "column": 17
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "string",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "<example@example.com>",
-      "start": 745,
-      "end": 768,
-      "loc": {
-        "start": {
-          "line": 26,
-          "column": 18
-        },
-        "end": {
-          "line": 26,
-          "column": 41
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ",",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 768,
-      "end": 769,
-      "loc": {
-        "start": {
-          "line": 26,
-          "column": 41
-        },
-        "end": {
-          "line": 26,
-          "column": 42
-        }
-      }
-    },
-    {
-      "type": "CommentLine",
-      "value": " openpgp.worker.js must be located in the place where api_openpgp.js and js-file bundling core-file.",
-      "start": 775,
-      "end": 877,
-      "loc": {
-        "start": {
-          "line": 28,
-          "column": 4
-        },
-        "end": {
-          "line": 28,
-          "column": 106
-        }
-      }
-    },
-    {
-      "type": "CommentLine",
-      "value": " Namely in this project, they are located in 'dist',",
-      "start": 882,
-      "end": 936,
-      "loc": {
-        "start": {
-          "line": 29,
-          "column": 4
-        },
-        "end": {
-          "line": 29,
-          "column": 58
-        }
-      }
-    },
-    {
-      "type": "CommentLine",
-      "value": " and it will be './', i.e., the root path of the url, from the viewpoint of bundled file.",
-      "start": 941,
-      "end": 1032,
-      "loc": {
-        "start": {
-          "line": 30,
-          "column": 4
-        },
-        "end": {
-          "line": 30,
-          "column": 95
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "workerPathWeb",
-      "start": 1037,
-      "end": 1050,
-      "loc": {
-        "start": {
-          "line": 31,
-          "column": 4
-        },
-        "end": {
-          "line": 31,
-          "column": 17
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ":",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 1050,
-      "end": 1051,
-      "loc": {
-        "start": {
-          "line": 31,
-          "column": 17
-        },
-        "end": {
-          "line": 31,
-          "column": 18
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "string",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "./openpgp.worker.min.js",
-      "start": 1052,
-      "end": 1077,
-      "loc": {
-        "start": {
-          "line": 31,
-          "column": 19
-        },
-        "end": {
-          "line": 31,
-          "column": 44
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ",",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 1077,
-      "end": 1078,
-      "loc": {
-        "start": {
-          "line": 31,
-          "column": 44
-        },
-        "end": {
-          "line": 31,
-          "column": 45
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "workerPathNode",
-      "start": 1084,
-      "end": 1098,
-      "loc": {
-        "start": {
-          "line": 33,
-          "column": 4
-        },
-        "end": {
-          "line": 33,
-          "column": 18
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ":",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 1098,
-      "end": 1099,
-      "loc": {
-        "start": {
-          "line": 33,
-          "column": 18
-        },
-        "end": {
-          "line": 33,
-          "column": 19
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "string",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "../node_modules/openpgp/dist/openpgp.worker.min.js",
-      "start": 1100,
-      "end": 1152,
-      "loc": {
-        "start": {
-          "line": 33,
-          "column": 20
-        },
-        "end": {
-          "line": 33,
-          "column": 72
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ",",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 1152,
-      "end": 1153,
-      "loc": {
-        "start": {
-          "line": 33,
-          "column": 72
-        },
-        "end": {
-          "line": 33,
-          "column": 73
-        }
-      }
-    },
-    {
       "type": {
         "label": "}",
         "beforeExpr": false,
@@ -2510,40 +1705,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1156,
-      "end": 1157,
+      "start": 700,
+      "end": 701,
       "loc": {
         "start": {
-          "line": 34,
-          "column": 2
-        },
-        "end": {
-          "line": 34,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "}",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 1158,
-      "end": 1159,
-      "loc": {
-        "start": {
-          "line": 35,
+          "line": 24,
           "column": 0
         },
         "end": {
-          "line": 35,
+          "line": 24,
           "column": 1
         }
       }
@@ -2561,15 +1731,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1159,
-      "end": 1160,
+      "start": 701,
+      "end": 702,
       "loc": {
         "start": {
-          "line": 35,
+          "line": 24,
           "column": 1
         },
         "end": {
-          "line": 35,
+          "line": 24,
           "column": 2
         }
       }
@@ -2587,16 +1757,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1160,
-      "end": 1160,
+      "start": 703,
+      "end": 703,
       "loc": {
         "start": {
-          "line": 35,
-          "column": 2
+          "line": 25,
+          "column": 0
         },
         "end": {
-          "line": 35,
-          "column": 2
+          "line": 25,
+          "column": 0
         }
       }
     }

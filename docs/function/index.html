@@ -40,7 +40,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/signature.js~Signature.html">Signature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite.js~Suite.html">Suite</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite_jscu.js~Jscu.html">Jscu</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/suite_openpgp.js~OpenPGP.html">OpenPGP</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createDecryptionCascade">createDecryptionCascade</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createEncryptionCascade">createEncryptionCascade</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createCascadedData">createCascadedData</a></span></span></li>
@@ -57,7 +56,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createKeyId">createKeyId</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createKeyIdList">createKeyIdList</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromJscuKey">fromJscuKey</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromOpenPgpKey">fromOpenPgpKey</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromRawKey">fromRawKey</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateKeyObject">generateKeyObject</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-importKeys">importKeys</a></span></span></li>
@@ -66,7 +64,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createSignature">createSignature</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-importSignatureBuffer">importSignatureBuffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getJscu">getJscu</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getOpenPgp">getOpenPgp</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -429,35 +426,6 @@ see the spec here =&gt; <a href="https://tools.ietf.org/html/rfc7638">https://to
       <div>
         <p>
           
-          
-          
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromOpenPgpKey">fromOpenPgpKey</a></span></span><span class="code" data-ice="signature">(keyObject: <span>*</span>, len: <span>*</span>): <span><a href="class/src/keyid.js~KeyId.html">KeyId</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Calculate key id from openpgp key object</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
           <span data-ice="async">async</span>
           
           <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromRawKey">fromRawKey</a></span></span><span class="code" data-ice="signature">(bin: <span>*</span>, len: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/keyid.js~KeyId.html">KeyId</a></span>&gt;</span>
@@ -524,7 +492,7 @@ see the spec here =&gt; <a href="https://tools.ietf.org/html/rfc7638">https://to
       <div>
         
         
-        <div data-ice="description"><p>Basic key generator via openpgp/jscu APIs.</p>
+        <div data-ice="description"><p>Basic key generator via jscu APIs.</p>
 </div>
       </div>
     </td>
@@ -553,35 +521,8 @@ see the spec here =&gt; <a href="https://tools.ietf.org/html/rfc7638">https://to
       <div>
         
         
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-getOpenPgp">getOpenPgp</a></span></span><span class="code" data-ice="signature">(): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
+        <div data-ice="description"><p>utils.js</p>
+</div>
       </div>
     </td>
     <td>
@@ -905,11 +846,11 @@ see the spec here =&gt; <a href="https://tools.ietf.org/html/rfc7638">https://to
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/cascade.js.html#lineNumber25">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/cascade.js.html#lineNumber24">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {createDecryptionCascade} from &apos;<span><a href="file/src/cascade.js.html#lineNumber25">crypto-cascade/src/cascade.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {createDecryptionCascade} from &apos;<span><a href="file/src/cascade.js.html#lineNumber24">crypto-cascade/src/cascade.js</a></span>&apos;</code></pre></div>
   
   
   
@@ -1066,11 +1007,11 @@ see the spec here =&gt; <a href="https://tools.ietf.org/html/rfc7638">https://to
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/cascade.js.html#lineNumber14">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/cascade.js.html#lineNumber13">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {createEncryptionCascade} from &apos;<span><a href="file/src/cascade.js.html#lineNumber14">crypto-cascade/src/cascade.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {createEncryptionCascade} from &apos;<span><a href="file/src/cascade.js.html#lineNumber13">crypto-cascade/src/cascade.js</a></span>&apos;</code></pre></div>
   
   
   
@@ -1137,11 +1078,11 @@ see the spec here =&gt; <a href="https://tools.ietf.org/html/rfc7638">https://to
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/keyid.js.html#lineNumber48">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/keyid.js.html#lineNumber36">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {createKeyId} from &apos;<span><a href="file/src/keyid.js.html#lineNumber48">crypto-cascade/src/keyid.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {createKeyId} from &apos;<span><a href="file/src/keyid.js.html#lineNumber36">crypto-cascade/src/keyid.js</a></span>&apos;</code></pre></div>
   
   
   
@@ -1208,11 +1149,11 @@ see the spec here =&gt; <a href="https://tools.ietf.org/html/rfc7638">https://to
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/keyid.js.html#lineNumber69">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/keyid.js.html#lineNumber57">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {createKeyIdList} from &apos;<span><a href="file/src/keyid.js.html#lineNumber69">crypto-cascade/src/keyid.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {createKeyIdList} from &apos;<span><a href="file/src/keyid.js.html#lineNumber57">crypto-cascade/src/keyid.js</a></span>&apos;</code></pre></div>
   
   
   
@@ -1529,11 +1470,11 @@ see the spec here =&gt; <a href="https://tools.ietf.org/html/rfc7638">https://to
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/core.js.html#lineNumber100">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/core.js.html#lineNumber83">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {decrypt} from &apos;<span><a href="file/src/core.js.html#lineNumber100">crypto-cascade/src/core.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {decrypt} from &apos;<span><a href="file/src/core.js.html#lineNumber83">crypto-cascade/src/core.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Decrypt given message and additionally verify attached signatures simultaneously.</p>
@@ -1607,11 +1548,11 @@ see the spec here =&gt; <a href="https://tools.ietf.org/html/rfc7638">https://to
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/core.js.html#lineNumber62">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/core.js.html#lineNumber48">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {encrypt} from &apos;<span><a href="file/src/core.js.html#lineNumber62">crypto-cascade/src/core.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {encrypt} from &apos;<span><a href="file/src/core.js.html#lineNumber48">crypto-cascade/src/core.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Basic encryption API that enables signing simultaneously with encrypting message.</p>
@@ -1691,11 +1632,11 @@ see the spec here =&gt; <a href="https://tools.ietf.org/html/rfc7638">https://to
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/keyid.js.html#lineNumber30">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/keyid.js.html#lineNumber18">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {fromJscuKey} from &apos;<span><a href="file/src/keyid.js.html#lineNumber30">crypto-cascade/src/keyid.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {fromJscuKey} from &apos;<span><a href="file/src/keyid.js.html#lineNumber18">crypto-cascade/src/keyid.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Calculate key Id from jwk-formatted key
@@ -1760,84 +1701,6 @@ see the spec here =&gt; <a href="https://tools.ietf.org/html/rfc7638">https://to
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-function-fromOpenPgpKey">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">fromOpenPgpKey</span><span class="code" data-ice="signature">(keyObject: <span>*</span>, len: <span>*</span>): <span><a href="class/src/keyid.js~KeyId.html">KeyId</a></span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/keyid.js.html#lineNumber16">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {fromOpenPgpKey} from &apos;<span><a href="file/src/keyid.js.html#lineNumber16">crypto-cascade/src/keyid.js</a></span>&apos;</code></pre></div>
-  
-  
-  <div data-ice="description"><p>Calculate key id from openpgp key object</p>
-</div>
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">keyObject</td>
-      <td data-ice="type" class="code"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">len</td>
-      <td data-ice="type" class="code"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="class/src/keyid.js~KeyId.html">KeyId</a></span></td>
-          
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="static-function-fromRawKey">
     <span class="access" data-ice="access">public</span>
     
@@ -1849,11 +1712,11 @@ see the spec here =&gt; <a href="https://tools.ietf.org/html/rfc7638">https://to
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/keyid.js.html#lineNumber41">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/keyid.js.html#lineNumber29">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {fromRawKey} from &apos;<span><a href="file/src/keyid.js.html#lineNumber41">crypto-cascade/src/keyid.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {fromRawKey} from &apos;<span><a href="file/src/keyid.js.html#lineNumber29">crypto-cascade/src/keyid.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Just a hash of raw binary key</p>
@@ -1927,11 +1790,11 @@ see the spec here =&gt; <a href="https://tools.ietf.org/html/rfc7638">https://to
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/core.js.html#lineNumber24">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/core.js.html#lineNumber18">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {generateKey} from &apos;<span><a href="file/src/core.js.html#lineNumber24">crypto-cascade/src/core.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {generateKey} from &apos;<span><a href="file/src/core.js.html#lineNumber18">crypto-cascade/src/core.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Generate key (pair). This API must be called externally.</p>
@@ -1952,11 +1815,6 @@ see the spec here =&gt; <a href="https://tools.ietf.org/html/rfc7638">https://to
       <td data-ice="type" class="code"><span>*</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>{object}: a parameter to generate keys in the form of like
-OpenPGP:
-{ suite: &apos;openpgp&apos;,
-  userIds,
-  passphrase: &apos;omg&apos;,
-  keyParams: { type: &apos;ECC&apos;, keyExpirationTime: 0, curve: &apos;P-256&apos; } }
 Simple Crypto Suite using WebCryptoAPI/OpenSSL:
 { suite: &apos;jscu&apos;,
   passphrase: &apos;omg&apos;,
@@ -2009,14 +1867,14 @@ Simple Crypto Suite using WebCryptoAPI/OpenSSL:
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/keys.js.html#lineNumber151">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/keys.js.html#lineNumber149">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {generateKeyObject} from &apos;<span><a href="file/src/keys.js.html#lineNumber151">crypto-cascade/src/keys.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {generateKeyObject} from &apos;<span><a href="file/src/keys.js.html#lineNumber149">crypto-cascade/src/keys.js</a></span>&apos;</code></pre></div>
   
   
-  <div data-ice="description"><p>Basic key generator via openpgp/jscu APIs. Returns raw objects of keys in both environments from the spec with some additional args.</p>
+  <div data-ice="description"><p>Basic key generator via jscu APIs. Returns raw objects of keys in both environments from the spec with some additional args.</p>
 </div>
 
   
@@ -2081,69 +1939,15 @@ Simple Crypto Suite using WebCryptoAPI/OpenSSL:
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/util.js.html#lineNumber7">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/util.js.html#lineNumber6">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {getJscu} from &apos;<span><a href="file/src/util.js.html#lineNumber7">crypto-cascade/src/util.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {getJscu} from &apos;<span><a href="file/src/util.js.html#lineNumber6">crypto-cascade/src/util.js</a></span>&apos;</code></pre></div>
   
   
-  
-
-  
-
-  <div data-ice="properties">
+  <div data-ice="description"><p>utils.js</p>
 </div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type code" data-ice="returnType"><span>*</span></td>
-          
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-function-getOpenPgp">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">getOpenPgp</span><span class="code" data-ice="signature">(): <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/util.js.html#lineNumber22">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {getOpenPgp} from &apos;<span><a href="file/src/util.js.html#lineNumber22">crypto-cascade/src/util.js</a></span>&apos;</code></pre></div>
-  
-  
-  
 
   
 
@@ -2333,11 +2137,11 @@ Simple Crypto Suite using WebCryptoAPI/OpenSSL:
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/keys.js.html#lineNumber72">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/keys.js.html#lineNumber71">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {importKeys} from &apos;<span><a href="file/src/keys.js.html#lineNumber72">crypto-cascade/src/keys.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {importKeys} from &apos;<span><a href="file/src/keys.js.html#lineNumber71">crypto-cascade/src/keys.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Functions to import keys and translate them to suite-specific key objects.</p>
@@ -2637,11 +2441,11 @@ Simple Crypto Suite using WebCryptoAPI/OpenSSL:
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/core.js.html#lineNumber134">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/core.js.html#lineNumber117">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {sign} from &apos;<span><a href="file/src/core.js.html#lineNumber134">crypto-cascade/src/core.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {sign} from &apos;<span><a href="file/src/core.js.html#lineNumber117">crypto-cascade/src/core.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Returns the signature objects.</p>
@@ -2721,11 +2525,11 @@ Simple Crypto Suite using WebCryptoAPI/OpenSSL:
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/core.js.html#lineNumber159">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/core.js.html#lineNumber142">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {verify} from &apos;<span><a href="file/src/core.js.html#lineNumber159">crypto-cascade/src/core.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {verify} from &apos;<span><a href="file/src/core.js.html#lineNumber142">crypto-cascade/src/core.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Returns verification result</p>
