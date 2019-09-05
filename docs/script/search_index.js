@@ -1,7 +1,13 @@
 window.esdocSearchIndex = [
   [
     "",
-    "test-file/test/api.basic.encrypt-sign-session.spec.js.html#lineNumber12",
+    "test-file/test/api.basic.encrypt-sign-aeskw.spec.js.html#lineNumber12",
+    "",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/api.basic.keygen.spec.js.html#lineNumber10",
     "",
     "test"
   ],
@@ -13,13 +19,13 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/api.basic.sign.spec.js.html#lineNumber12",
+    "test-file/test/api.basic.encrypt-sign-session.spec.js.html#lineNumber12",
     "",
     "test"
   ],
   [
     "",
-    "test-file/test/api.basic.encrypt-sign.spec.js.html#lineNumber12",
+    "test-file/test/api.basic.sign.spec.js.html#lineNumber12",
     "",
     "test"
   ],
@@ -37,13 +43,13 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/test/api.basic.encrypt.spec.js.html#lineNumber12",
+    "test-file/test/api.basic.encrypt-sign.spec.js.html#lineNumber12",
     "",
     "test"
   ],
   [
     "",
-    "test-file/test/api.basic.keygen.spec.js.html#lineNumber10",
+    "test-file/test/api.basic.encrypt.spec.js.html#lineNumber12",
     "",
     "test"
   ],
@@ -195,6 +201,12 @@ window.esdocSearchIndex = [
     "",
     "test-file/test/api.basic.sign.spec.js.html#lineNumber51",
     " jscu: EC/RSA signing test with multiple secret keys",
+    "test"
+  ],
+  [
+    "",
+    "test-file/test/api.basic.encrypt-sign-aeskw.spec.js.html#lineNumber25",
+    " jscu: ECDH KeyWrapping and signing test",
     "test"
   ],
   [
@@ -1216,6 +1228,12 @@ window.esdocSearchIndex = [
     "file/src/util.js.html",
     "src/util.js",
     "file"
+  ],
+  [
+    "test/api.basic.encrypt-sign-aeskw.spec.js",
+    "test-file/test/api.basic.encrypt-sign-aeskw.spec.js.html",
+    "test/api.basic.encrypt-sign-aeskw.spec.js",
+    "testFile"
   ],
   [
     "test/api.basic.encrypt-sign-session.spec.js",
